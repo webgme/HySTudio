@@ -1,0 +1,83 @@
+{
+  "flow*": {
+    "description": "Flow* analyzer that produces basic 2D reachability plot in eps and svg",
+    "input": "flowstar",
+    "useConfig": false,
+    "dockerImage": "flowstar:1.2.3",
+    "userOptions": null,
+    "workingDir": "/usr/app/flowstar-1.2.3",
+    "commands": [
+      "./flowstar < $dir/$name.flow",
+      "gnuplot -c ./outputs/out.plt",
+      "echo \"set terminal svg\" > ./outputs/out.svg.plt",
+      "echo \"set output './images/out.svg'\" >> ./outputs/out.svg.plt",
+      "tail -n+3 ./outputs/out.plt >> ./outputs/out.svg.plt",
+      "gnuplot -c ./outputs/out.svg.plt",
+      "cp ./outputs/* $dir",
+      "cp ./images/* $dir"
+    ],
+    "outputFormat": {
+      "figures": [
+        "out.svg"
+      ]
+    }
+  },
+  "SpaceEx": {
+    "description": "SpaceEx reachability analysis",
+    "input": "spaceex",
+    "useConfig": true,
+    "noConversion": true,
+    "dockerImage": "spaceex:0.9.8c",
+    "userOptions": null,
+    "workingDir": "/usr/spaceex_exe",
+    "commands": [
+      "./spaceex -g $dir/$name.cfg -m $dir/$name.xml -o $dir/$name.spaceex.out",
+      "cp ./plot.template $dir/$name.plt",
+      "tail -n+1 $dir/$name.spaceex.out >> $dir/$name.plt",
+      "gnuplot -c $dir/$name.plt",
+      "cp ./out.spaceex.svg $dir/out.spaceex.svg"
+    ],
+    "outputFormat": {
+      "figures": [
+        "out.spaceex.svg"
+      ]
+    }
+  },
+  "dReach": {
+    "description": "Some description about the given analysis",
+    "input": "dreach",
+    "dockerImage": "dreach:0.0.42",
+    "userOptions": null,
+    "workingDir": "/usr/app/dReal-3.16.06.02-linux/bin",
+    "commands": [
+      "./dReach -k 10 -l 10 $dir/$name.drh --visualize --precision-0.1"
+    ],
+    "outputFormat": "archive"
+  },
+  "anotherOne": {
+    "description": "just testing the config",
+    "userOptions": [
+      {
+        "name": "tool",
+        "displayName": "Target Tool",
+        "description": "Define the target tool/format of the translation.",
+        "value": "flowstar",
+        "valueType": "string",
+        "valueItems": [
+          "hycreate",
+          "flowstar",
+          "dreach",
+          "spaceex",
+          "hycomp"
+        ]
+      },
+      {
+        "name": "configFile",
+        "displayName": "File containing the SpaceEx configuration",
+        "description": "File asset having the SpaceEx configuration. If not given, the one inside the model will be used.",
+        "valueType": "asset",
+        "readOnly": false
+      }
+    ]
+  }
+}

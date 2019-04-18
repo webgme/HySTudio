@@ -1,0 +1,15 @@
+# TODO this container is not working as of now because HyCreate seems to have a GUI only approach...
+# Node 10
+FROM node:dubnium
+
+# Install Java
+RUN apt-get -y update && apt-get -y upgrade && apt-get -y install default-jdk
+
+# Install HyCreate 2.81
+RUN mkdir /usr/app
+WORKDIR /usr/app
+RUN curl -o HyCreate2.81.zip http://stanleybak.com/projects/hycreate/HyCreate2.81.zip
+RUN unzip HyCreate2.81.zip
+
+WORKDIR /usr/app/HyCreate2.81
+

@@ -1,0 +1,37 @@
+{
+  "id": "HyST",
+  "name": "HyST",
+  "version": "0.1.0",
+  "description": "",
+  "icon": {
+    "class": "glyphicon glyphicon-cog",
+    "src": ""
+  },
+  "disableServerSideExecution": false,
+  "disableBrowserSideExecution": true,
+  "dependencies": [],
+  "writeAccessRequired": false,
+  "configStructure": [
+    {
+      "name": "tool",
+      "displayName": "Target Tool",
+      "description": "Define the target tool/format of the translation.",
+      "value": "flowstar",
+      "valueType": "string",
+      "valueItems": [
+        "hycreate",
+        "flowstar",
+        "dreach",
+        "spaceex",
+        "hycomp"
+      ]
+    },
+    {
+      "name": "configFile",
+      "displayName": "File containing the SpaceEx configuration",
+      "description": "File asset having the SpaceEx configuration. If not given, the one inside the model will be used.",
+      "valueType": "asset",
+      "readOnly": false
+    }
+  ]
+}

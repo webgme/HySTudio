@@ -1,0 +1,23 @@
+{
+  "id": "ImportSpaceExConfig",
+  "name": "ImportSpaceExConfig",
+  "version": "0.1.0",
+  "description": "",
+  "icon": {
+    "class": "glyphicon glyphicon-cog",
+    "src": ""
+  },
+  "disableServerSideExecution": false,
+  "disableBrowserSideExecution": false,
+  "dependencies": [],
+  "writeAccessRequired": false,
+  "configStructure": [
+    {
+      "name": "configFile",
+      "displayName": "File containing the SpaceEx configuration",
+      "description": "File asset having the SpaceEx configuration.",
+      "valueType": "asset",
+      "readOnly": false
+    }
+  ]
+}

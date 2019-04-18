@@ -1,0 +1,15 @@
+# Node 10
+FROM node:dubnium
+
+
+# Install HyCreate 2.81
+RUN mkdir /usr/app
+WORKDIR /usr/app
+RUN curl -o nuXmv-1.1.0-linux64.tar.gz https://es.fbk.eu/tools/nuxmv/downloads/nuXmv-1.1.0-linux64.tar.gz
+RUN unzip HyCreate2.81.zip
+
+WORKDIR /usr/app/HyCreate2.81
+
+
+
+https://es.fbk.eu/tools/nuxmv/downloads/nuXmv-1.1.0-linux64.tar.gz

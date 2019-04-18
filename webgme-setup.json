@@ -1,0 +1,75 @@
+{
+  "components": {
+    "addons": {},
+    "decorators": {},
+    "layouts": {
+      "AnalyzerToolbar": {
+        "src": "src/layouts/AnalyzerToolbar"
+      }
+    },
+    "plugins": {
+      "ImportSpaceEx": {
+        "src": "src/plugins/ImportSpaceEx",
+        "test": "test/plugins/ImportSpaceEx"
+      },
+      "ExportSpaceEx": {
+        "src": "src/plugins/ExportSpaceEx",
+        "test": "test/plugins/ExportSpaceEx"
+      },
+      "ImportSpaceExConfig": {
+        "src": "src/plugins/ImportSpaceExConfig",
+        "test": "test/plugins/ImportSpaceExConfig"
+      },
+      "ExportSpaceExConfig": {
+        "src": "src/plugins/ExportSpaceExConfig",
+        "test": "test/plugins/ExportSpaceExConfig"
+      },
+      "HyST": {
+        "src": "src/plugins/HyST",
+        "test": "test/plugins/HyST"
+      },
+      "DockerAnalysisExecuter": {
+        "src": "src/plugins/DockerAnalysisExecuter",
+        "test": "test/plugins/DockerAnalysisExecuter"
+      }
+    },
+    "routers": {
+      "HyST": {
+        "src": "src/routers/HyST",
+        "test": "test/routers/HyST",
+        "mount": "routers/HyST"
+      }
+    },
+    "seeds": {
+      "SpaceEx": {
+        "src": "src/seeds/SpaceEx"
+      },
+      "HySTBase": {
+        "src": "src/seeds/HySTBase"
+      }
+    },
+    "visualizers": {
+      "AnalyzerToolbox": {
+        "src": "panels/AnalyzerToolbox/AnalyzerToolboxPanel",
+        "title": "AnalyzerToolbox",
+        "panel": "src/visualizers/panels/AnalyzerToolbox",
+        "secondary": true,
+        "widget": "src/visualizers/widgets/AnalyzerToolbox"
+      }
+    }
+  },
+  "dependencies": {
+    "addons": {},
+    "decorators": {
+      "MultilineAttributeDecorator": {
+        "project": "ui-components",
+        "path": "node_modules/ui-components/src/decorators/MultilineAttributeDecorator"
+      }
+    },
+    "layouts": {},
+    "plugins": {},
+    "routers": {},
+    "seeds": {},
+    "visualizers": {}
+  }
+}

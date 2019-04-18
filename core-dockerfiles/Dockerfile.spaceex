@@ -1,0 +1,23 @@
+# Node 10
+FROM kecso/spaceex:0.1.0
+
+# Install
+RUN mkdir /usr/app
+WORKDIR /usr/spaceex_exe
+RUN apt-get update -y
+RUN apt-get install gnuplot -y
+
+# building a template for easy plotting of spaceex 2D output
+RUN echo "set terminal svg" > plot.template
+RUN echo "set output './out.spaceex.svg'" >> plot.template
+RUN echo "set style line 1 linecolor rgb \"blue\"" >> plot.template
+RUN echo "set autoscale" >> plot.template
+RUN echo "unset label" >> plot.template
+RUN echo "set xtic auto" >> plot.template
+RUN echo "set ytic auto" >> plot.template
+RUN echo "plot '-' notitle with lines ls 1" >> plot.template
+RUN echo "" >> plot.template
+
+
+
+

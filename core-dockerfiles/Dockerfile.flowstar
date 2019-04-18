@@ -1,0 +1,23 @@
+# TODO this container might not work because you need to register for download...
+# Node 10
+FROM node:dubnium
+
+# Install Java
+# RUN apt-get -y update && apt-get -y upgrade && apt-get -y install default-jdk
+
+# Install required libraries for Flow*
+RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get -y install libgmp3-dev libmpfr-dev libmpfr-doc libmpfr4 libmpfr4-dbg libgsl0-dev libglpk-dev glpk-utils libglpk-java libglpk40 flex bison gnuplot
+# Install Flow* 2.1.0
+RUN mkdir /usr/app
+WORKDIR /usr/app
+# RUN curl -sL https://www.cs.colorado.edu/~xich8622/src/flowstar-2.1.0.tar.gz | tar xz
+RUN curl -sL https://www.cs.colorado.edu/~xich8622/src/flowstar-1.2.3.tar.gz | tar xz
+WORKDIR /usr/app/flowstar-1.2.3
+RUN make
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+{
+  "GenericUIWebGMEStart": {
+    "byProjectKind": {
+      "nodeAtOpen": {
+        "HyST": "/v"
+      }
+    }
+  },
+  "GenericUITreeBrowserControl": {
+    "byProjectKind": {
+      "treeRoot": {
+        "HyST": "/v"
+      }
+    }
+  },
+  "MultilineAttributeDecorator": {
+    "textAlign": "left",
+    "attrBlackList": []
+  },
+  "GenericUIPluginToolbar": {
+    "disablePopUpNotification": true
+  },
+  "GenericUIPluginNotification": {
+    "useRunningPluginsDrawer": false
+  }
+}

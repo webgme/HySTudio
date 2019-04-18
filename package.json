@@ -1,0 +1,32 @@
+{
+  "name": "hysteditor",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node ./node_modules/mocha/bin/mocha --recursive test",
+    "apply": "node ./node_modules/webgme-engine/src/bin/apply.js",
+    "diff": "node ./node_modules/webgme-engine/src/bin/diff.js",
+    "export": "node ./node_modules/webgme-engine/src/bin/export.js",
+    "import": "node ./node_modules/webgme-engine/src/bin/import.js",
+    "merge": "node ./node_modules/webgme-engine/src/bin/merge.js",
+    "plugin": "node ./node_modules/webgme-engine/src/bin/run_plugin.js",
+    "pluginHook": "node ./node_modules/webgme-engine/src/bin/plugin_hook.js",
+    "users": "node ./node_modules/webgme-engine/src/bin/usermanager.js",
+    "clean_up": "node ./node_modules/webgme-engine/src/bin/clean_up.js"
+  },
+  "version": "1.0.0",
+  "peerDependencies": {
+    "webgme": "github:webgme/webgme#master"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5",
+    "rimraf": "^2.6.3",
+    "webgme": "github:webgme/webgme#master"
+  },
+  "dependencies": {
+    "dockerode": "^2.5.7",
+    "node-rsa": "^1.0.2",
+    "ui-components": "github:webgme/ui-components",
+    "zip-folder": "^1.0.0"
+  }
+}

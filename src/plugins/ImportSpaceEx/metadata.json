@@ -1,0 +1,23 @@
+{
+  "id": "ImportSpaceEx",
+  "name": "ImportSpaceEx",
+  "version": "0.1.0",
+  "description": "",
+  "icon": {
+    "class": "glyphicon glyphicon-cog",
+    "src": ""
+  },
+  "disableServerSideExecution": false,
+  "disableBrowserSideExecution": false,
+  "dependencies": [],
+  "writeAccessRequired": false,
+  "configStructure": [
+    {
+      "name": "modelFile",
+      "displayName": "File containing the SpaceEx model",
+      "description": "File asset having the SpaceEx model content.",
+      "valueType": "asset",
+      "readOnly": false
+    }
+  ]
+}

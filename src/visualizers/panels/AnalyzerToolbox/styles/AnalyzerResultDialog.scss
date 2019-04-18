@@ -1,0 +1,49 @@
+/*
+ * @author kecso / https://github.com/kecso
+ */
+
+div.analyzer-result-dialog {
+  .modal-content {
+    &.info {
+      .modal-header {
+        .header-icon {
+          color: #2e6da4;
+        }
+      }
+    }
+
+    &.warning {
+      .modal-header {
+        .header-icon {
+          color: #f0ad4e;
+        }
+      }
+    }
+
+    .result-archive {
+      font-size: 14px;
+    }
+
+    .result-image {
+    }
+
+    .modal-header {
+      .header-icon {
+        font-size: 20px;
+        margin-right: 1ex;
+        display: inline-block;
+        color: #d9534f;
+      }
+
+      span {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .modal-footer {
+    label {
+      font-weight: lighter;
+    }
+  }
+}
