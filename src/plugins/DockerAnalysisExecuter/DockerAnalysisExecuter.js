@@ -124,7 +124,7 @@ define([
                     WorkingDir: self._config.workingDir,
                     HostConfig: {
                         Binds: [
-                            'hysteditor_work:/webgmedata'
+                            'hystudio_work:/webgmedata'
                         ]
                     }
                 });
