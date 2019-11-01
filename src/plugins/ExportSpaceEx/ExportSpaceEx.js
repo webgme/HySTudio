@@ -153,20 +153,20 @@ define([
         HyST.setAttribute(location, 'name', attribute);
 
         attribute = core.getRegistry(node, 'position');
-        if (typeof Number(attribute.x) === 'number') {
+        if (!isNan(Number(attribute.x))) {
             HyST.setAttribute(location, 'x', attribute.x);
         }
-        if (typeof Number(attribute.y) === 'number') {
+        if (!isNan(Number(attribute.y))) {
             HyST.setAttribute(location, 'y', attribute.y);
         }
 
         attribute = core.getRegistry(node, 'decoratorHeight');
-        if (typeof Number(attribute) === 'number') {
+        if (!isNan(Number(attribute))) {
             HyST.setAttribute(location, 'height', attribute);
         }
 
         attribute = core.getRegistry(node, 'decoratorWidth');
-        if (typeof Number(attribute) === 'number') {
+        if (!isNan(Number(attribute))) {
             HyST.setAttribute(location, 'width', attribute);
         }
 
@@ -251,20 +251,20 @@ define([
         HyST.setAttribute(binding, 'as', core.getAttribute(node, 'name'));
 
         attribute = core.getRegistry(node, 'position');
-        if (typeof attribute.x === 'number') {
+        if (!isNan(Number(attribute.x))) {
             HyST.setAttribute(binding, 'x', attribute.x);
         }
-        if (typeof attribute.y === 'number') {
+        if (!isNan(Number(attribute.y))) {
             HyST.setAttribute(binding, 'y', attribute.y);
         }
 
         attribute = core.getRegistry(node, 'decoratorHeight');
-        if (typeof attribute === 'number') {
+        if (!isNan(Number(attribute))) {
             HyST.setAttribute(binding, 'height', attribute);
         }
 
         attribute = core.getRegistry(node, 'decoratorWidth');
-        if (typeof attribute === 'number') {
+        if (!isNan(Number(attribute))) {
             HyST.setAttribute(binding, 'width', attribute);
         }
 
