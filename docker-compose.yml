@@ -24,7 +24,7 @@ services:
     depends_on:
       - studio
     volumes:
-      - ssl:/ssl_certs
+      - /webgmeshare/ssl_certs:/ssl_certs
     networks:
       - frontend
     ports:
@@ -39,10 +39,10 @@ services:
     environment:
       - NODE_ENV=release
     volumes:
-      - ssl:/webgmeshare/ssl_certs
-      - work:/webgmeshare/work_temp
-      - keys:/webgmeshare/token_keys
-      - blob:/webgmeshare/blob-local-storage
+      - /webgmeshare/ssl_certs:/webgmeshare/ssl_certs
+      - /webgmeshare/work:/webgmeshare/work_temp
+      - /webgmeshare/keys:/webgmeshare/token_keys
+      - /webgmeshare/blob:/webgmeshare/blob-local-storage
       - /var/run/docker.sock:/var/run/docker.sock
       - ./config:/usr/app/config/
     networks:
@@ -54,9 +54,3 @@ services:
       - db:/data/db
     networks:
       - database
-volumes:
-  db:
-  ssl:
-  work:
-  keys:
-  blob:
