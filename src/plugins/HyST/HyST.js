@@ -62,7 +62,8 @@ define([
         self._fs = require('fs');
         self._cp = require('child_process');
         self._path = require('path');
-        self._basedir = self._path.join(process.cwd(), 'work_temp');
+        // self._basedir = self._path.join(process.cwd(), 'work_temp');
+        self._basedir = '/webgmeshare/work_temp';
         self._hystdir = self._path.join(process.cwd(), '/src/plugins/HyST');
 
         self._modelName = core.getAttribute(model, 'name');
