@@ -101,35 +101,35 @@ define([
             attribute,
             parameter = {};
 
-        attribute = core.getOwnAttribute(node, 'name');
+        attribute = core.getAttribute(node, 'name');
         HyST.setAttribute(parameter, 'name', attribute);
 
-        attribute = core.getOwnAttribute(node, 'type');
+        attribute = core.getAttribute(node, 'type');
         if (attribute) {
             HyST.setAttribute(parameter, 'type', attribute);
         }
 
-        attribute = core.getOwnAttribute(node, 'local');
+        attribute = core.getAttribute(node, 'local');
         if (typeof attribute === 'boolean') {
             HyST.setAttribute(parameter, 'local', attribute);
         }
 
-        attribute = core.getOwnAttribute(node, 'd1');
+        attribute = core.getAttribute(node, 'd1') || 1;
         if (typeof attribute === 'number') {
             HyST.setAttribute(parameter, 'd1', attribute);
         }
 
-        attribute = core.getOwnAttribute(node, 'd2');
+        attribute = core.getAttribute(node, 'd2') || 1;
         if (typeof attribute === 'number') {
             HyST.setAttribute(parameter, 'd2', attribute);
         }
 
-        attribute = core.getOwnAttribute(node, 'dynamics');
+        attribute = core.getAttribute(node, 'dynamics');
         if (attribute) {
             HyST.setAttribute(parameter, 'dynamics', attribute);
         }
 
-        attribute = core.getOwnAttribute(node, 'controlled');
+        attribute = core.getAttribute(node, 'controlled');
         if (typeof attribute === 'boolean') {
             HyST.setAttribute(parameter, 'controlled', attribute ? 'true' : 'false');
         }
@@ -153,20 +153,20 @@ define([
         HyST.setAttribute(location, 'name', attribute);
 
         attribute = core.getRegistry(node, 'position');
-        if (!isNan(Number(attribute.x))) {
+        if (!isNaN(Number(attribute.x))) {
             HyST.setAttribute(location, 'x', attribute.x);
         }
-        if (!isNan(Number(attribute.y))) {
+        if (!isNaN(Number(attribute.y))) {
             HyST.setAttribute(location, 'y', attribute.y);
         }
 
         attribute = core.getRegistry(node, 'decoratorHeight');
-        if (!isNan(Number(attribute))) {
+        if (!isNaN(Number(attribute))) {
             HyST.setAttribute(location, 'height', attribute);
         }
 
         attribute = core.getRegistry(node, 'decoratorWidth');
-        if (!isNan(Number(attribute))) {
+        if (!isNaN(Number(attribute))) {
             HyST.setAttribute(location, 'width', attribute);
         }
 
@@ -251,20 +251,20 @@ define([
         HyST.setAttribute(binding, 'as', core.getAttribute(node, 'name'));
 
         attribute = core.getRegistry(node, 'position');
-        if (!isNan(Number(attribute.x))) {
+        if (!isNaN(Number(attribute.x))) {
             HyST.setAttribute(binding, 'x', attribute.x);
         }
-        if (!isNan(Number(attribute.y))) {
+        if (!isNaN(Number(attribute.y))) {
             HyST.setAttribute(binding, 'y', attribute.y);
         }
 
         attribute = core.getRegistry(node, 'decoratorHeight');
-        if (!isNan(Number(attribute))) {
+        if (!isNaN(Number(attribute))) {
             HyST.setAttribute(binding, 'height', attribute);
         }
 
         attribute = core.getRegistry(node, 'decoratorWidth');
-        if (!isNan(Number(attribute))) {
+        if (!isNaN(Number(attribute))) {
             HyST.setAttribute(binding, 'width', attribute);
         }
 
