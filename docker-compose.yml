@@ -44,13 +44,12 @@ services:
       - /webgmeshare/keys:/webgmeshare/token_keys
       - /webgmeshare/blob:/webgmeshare/blob-local-storage
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./config:/usr/app/config/
     networks:
       - database
       - frontend
   mongo:
     image: mongo:3.4.1
     volumes:
-      - db:/data/db
+      - /webgmeshare/db:/data/db
     networks:
       - database
