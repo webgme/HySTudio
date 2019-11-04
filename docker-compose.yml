@@ -53,3 +53,5 @@ services:
       - /webgmeshare/db:/data/db
     networks:
       - database
+    port:
+      - 27017:27017
