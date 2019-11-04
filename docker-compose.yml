@@ -40,7 +40,7 @@ services:
       - NODE_ENV=release
     volumes:
       - /webgmeshare/ssl_certs:/webgmeshare/ssl_certs
-      - /webgmeshare/work:/webgmeshare/work_temp
+      - work:/webgmeshare/work_temp
       - /webgmeshare/keys:/webgmeshare/token_keys
       - /webgmeshare/blob:/webgmeshare/blob-local-storage
       - /var/run/docker.sock:/var/run/docker.sock
@@ -55,3 +55,5 @@ services:
       - database
     ports:
       - 27017:27017
+volumes:
+  work:
