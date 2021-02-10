@@ -19,7 +19,7 @@
 
 
 # Node 10
-FROM node:dubnium
+FROM node:lts
 
 # Install git
 RUN apt-get update
